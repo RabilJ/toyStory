@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Toy</title>
+</head>
+<body>
+<form th:action="@{/skasuj}" method="post" th:object="${newToyToDelete}">
+    <input placeholder="Nazwa" th:field="*{name}">
+    <input type="submit" value="Skasuj">
+</form>
+</body>
+</html>

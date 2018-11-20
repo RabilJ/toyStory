@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Toy</title>
+</head>
+<body>
+<form th:action="@{/dodaj}" method="post" th:object="${newToyToAdd}">
+    <input placeholder="Nazwa" th:field="*{name}">
+    <input placeholder="Producent" th:field="*{producer}">
+    <input placeholder="Link URL do obrazka" th:field="*{imgUrl}">
+    <input type="submit" value="Dodaj">
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 th:text="Lista zabawek"></h1>
+<ul>
+<li th:each="toy: ${anList}">
+<a th:href="@{|/toy?name=${toy.getName()}|}"
+   th:text="${toy.getName()}"></a>
+    <a th:text="${toy.getProducer()}"></a>
+</li>
+</ul>
+
+<form th:action="@{/nowaDoDodania}" method="get">
+    <input type="submit" value="Dodaj zabawkę">
+</form>
+<br>
+<form th:action="@{/nowaDoSkasowania}" method="get">
+    <input type="submit" value="Skasuj zabawkę">
+</form>
+</body>
+</html>

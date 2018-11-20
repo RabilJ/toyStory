@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1 th:text="Siema ziomy"></h1>
+
+<h2 th:text="|Liczba wizyt ${visits}|"}></h2>
+
+
+<br>
+
+<form th:action="@{/lista}" method="get">
+    <input type="submit" value="Dodaj zabawkę">
+</form>
+</body>
+</html>
