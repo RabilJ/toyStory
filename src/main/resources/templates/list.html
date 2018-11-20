@@ -15,9 +15,11 @@
 </ul>
 
 <h2 th:text="|Filtruj po producencie|"></h2>
-<form th:action="@{/filter}" method="post" th:object="toyToFilter">
-<input placeholder="Producent">
+<form th:action="@{/filter}" method="post">
+<input placeholder="Producent" name="word">
+    <input type="submit" value="Dalej">
 </form>
+<br>
 
 <form th:action="@{/nowaDoDodania}" method="get">
     <input type="submit" value="Dodaj zabawkę">
@@ -25,6 +27,11 @@
 <br>
 <form th:action="@{/nowaDoSkasowania}" method="get">
     <input type="submit" value="Skasuj zabawkę">
+</form>
+<br>
+
+<form th:action="@{/powrot}" method="get">
+    <input type="submit" value="Powrót">
 </form>
 </body>
 </html>

@@ -5,32 +5,44 @@ import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Controller
 public class ToyRepository {
 
-    private List<Toy>toyList = new ArrayList<>();
+    private List<Toy> toyList = new ArrayList<>();
 
     public List<Toy> getToyList() {
         return toyList;
     }
 
     public ToyRepository() {
-        toyList.add(new Toy("Chudy","Lego","https://www.partybox.pl/zasoby/images/middle/dekoracja_kartonowa_chudy_toy_story_29600.jpg"));
-        toyList.add(new Toy("Buzz","Bionicle","https://s.mamotoja.pl/media/cache/source/media/product/201105/414_01_4408.jpg"));
-        toyList.add(new Toy("SpiderBaby","Moras","https://vignette.wikia.nocookie.net/pixar/images/8/8c/Babyface.jpg/revision/latest?cb=20111206021132"));
+        toyList.add(new Toy("Chudy", "Lego", "https://www.partybox.pl/zasoby/images/middle/dekoracja_kartonowa_chudy_toy_story_29600.jpg"));
+        toyList.add(new Toy("Buzz", "Bionicle", "https://s.mamotoja.pl/media/cache/source/media/product/201105/414_01_4408.jpg"));
+        toyList.add(new Toy("SpiderBaby", "Moras", "https://vignette.wikia.nocookie.net/pixar/images/8/8c/Babyface.jpg/revision/latest?cb=20111206021132"));
     }
 
-    public void add(Toy toy){
+    public void add(Toy toy) {
         toyList.add(toy);
     }
-    public  void remove(Toy toy){
+
+    public void remove(Toy toy) {
         toyList.remove(toy);
     }
-    public Toy findByName(String name){
+
+    public Toy findByName(String name) {
         for (Toy toy : toyList) {
-            if(toy.getName().equals(name))
+            if (toy.getName().equals(name))
                 return toy;
         }
         return null;
+    }
+
+    public List<Toy> filter(String producer) {
+        List<Toy> filteredList = new ArrayList<>();
+        for (Toy toy : toyList) {
+            if (toy.getProducer().equals(producer))
+                filteredList.add(toy);
+        }
+        return filteredList;
     }
 }

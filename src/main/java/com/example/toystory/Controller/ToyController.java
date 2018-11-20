@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class ToyController {
     private ToyRepository toyRep;
@@ -21,6 +23,7 @@ public class ToyController {
     @GetMapping("/lista")
     public String lista(Model model){
         model.addAttribute("anList",toyRep.getToyList());
+        model.addAttribute("toyToFilter",new Toy());
         return "list";
     }
     @GetMapping("/toy")
@@ -48,6 +51,15 @@ public class ToyController {
     public String skasuj(@RequestParam String name){
         Toy findToy = toyRep.findByName(name);
         toyRep.remove(findToy);
+        return "redirect:/";
+    }
+    @PostMapping("/filter")
+    public String filter(@RequestParam String word, Model model){
+        model.addAttribute("anList",toyRep.filter(word));
+        return "list";
+    }
+    @GetMapping("/powrot")
+    public String powrot(){
         return "redirect:/";
     }
 }
