@@ -19,6 +19,7 @@ public class HomeController {
     public HomeController(VisitCounter counter) {
         this.counter = counter;
     }
+
     @GetMapping("/")
     public String home(Model model, HttpServletResponse response, @CookieValue(required = false)String lastVisits){
         if (lastVisits!=null)
