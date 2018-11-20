@@ -17,7 +17,7 @@ public class ToyRepository {
     public ToyRepository() {
         toyList.add(new Toy("Chudy","Lego","https://www.partybox.pl/zasoby/images/middle/dekoracja_kartonowa_chudy_toy_story_29600.jpg"));
         toyList.add(new Toy("Buzz","Bionicle","https://s.mamotoja.pl/media/cache/source/media/product/201105/414_01_4408.jpg"));
-        toyList.add(new Toy("SpiderBaby","Bionicle","https://vignette.wikia.nocookie.net/pixar/images/8/8c/Babyface.jpg/revision/latest?cb=20111206021132"));
+        toyList.add(new Toy("SpiderBaby","Moras","https://vignette.wikia.nocookie.net/pixar/images/8/8c/Babyface.jpg/revision/latest?cb=20111206021132"));
     }
 
     public void add(Toy toy){

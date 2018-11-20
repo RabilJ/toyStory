@@ -5,9 +5,8 @@
     <title>Toy</title>
 </head>
 <body>
-<h1 th:text="${foundToy.getName()}"></h1>
-<h2 th:text="${foundToy.getProducer()}"></h2>
-<img th:src="@{/${foundToy.getImgUrl}}">
-<br>
+<h1 th:text="|Nazwa: ${foundToy.name}|"></h1>
+<h2 th:text="|Producent: ${foundToy.producer}|"></h2>
+<img th:src="@{|${foundToy.imgUrl}|}">
 </body>
 </html>

@@ -5,15 +5,9 @@
     <title>Home</title>
 </head>
 <body>
-<h1 th:text="Siema ziomy"></h1>
-
-<h2 th:text="|Liczba wizyt ${visits}|"}></h2>
-
-
-<br>
-
-<form th:action="@{/lista}" method="get">
-    <input type="submit" value="Dodaj zabawkę">
+<h1 th:text="|Cześć|"></h1>
+<form th:action="@{/lista}">
+    <input type="submit" value="Wyświetl listę">
 </form>
 </body>
 </html>

@@ -17,6 +17,7 @@ public class ToyController {
     public ToyController(ToyRepository toyRep) {
         this.toyRep = toyRep;
     }
+
     @GetMapping("/lista")
     public String lista(Model model){
         model.addAttribute("anList",toyRep.getToyList());

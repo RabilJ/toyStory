@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<h1 th:text="Lista zabawek"></h1>
+<h1 th:text="|Lista zabawek|"></h1>
 <ul>
 <li th:each="toy: ${anList}">
 <a th:href="@{|/toy?name=${toy.getName()}|}"
