@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 <h1 th:text="|Lista zabawek|"></h1>
-<ul>
-<li th:each="toy: ${anList}">
-<a th:href="@{|/toy?name=${toy.getName()}|}"
-   th:text="${toy.getName()}"></a>
-    <a th:text="${toy.getProducer()}"></a>
-</li>
+<ul class="list-group">
+    <li class="list-group-item" th:each="toy: ${anList}">
+        <a th:href="@{|/toy?name=${toy.getName()}|}"
+           th:text="${toy.getName()}"></a>
+        <a th:text="${toy.getProducer()}"></a>
+    </li>
 </ul>
-
-<h2 th:text="|Filtruj po producencie|"></h2>
+<br>
+<br>
 <form th:action="@{/filter}" method="post">
-<input placeholder="Producent" name="word">
-    <input type="submit" value="Dalej">
+    <div class="form-group">
+        <label for="word">Sortuj po producencie</label>
+        <input type="text" class="form-control" id="word" aria-describedby="wordHelp" placeholder="Wprowadź producenta" name="word">
+        <input type="submit" value="Dalej">
+    </div>
 </form>
+
 <br>
 
 <form th:action="@{/nowaDoDodania}" method="get">
-    <input type="submit" value="Dodaj zabawkę">
+    <button type="submit" class="btn btn-primary">Dodaj nową zabawkę</button>
 </form>
 <br>
 <form th:action="@{/nowaDoSkasowania}" method="get">
-    <input type="submit" value="Skasuj zabawkę">
+    <button type="submit" class="btn btn-primary">Skasuj zabawkę</button>
 </form>
 <br>
-
 <form th:action="@{/powrot}" method="get">
-    <input type="submit" value="Powrót">
+    <button type="submit" class="btn btn-primary">Powrót</button>
 </form>
 </body>
 </html>

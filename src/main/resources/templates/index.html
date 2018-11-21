@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 <h1 th:text="|Cześć|"></h1>
 <form th:action="@{/lista}">
-    <input type="submit" value="Wyświetl listę">
+    <button type="submit" class="btn btn-warning">Wyświetl listę</button>
 </form>
-<h2 th:text="|Wizyty: ${visits}|"></h2>
+<br>
+<form th:action="@{/powrot}" >
+<button class="btn btn-primary" type="submit"  th:text="|Wizyty: ${visits}|">
+
+</button>
+</form>
 </body>
 </html>

@@ -43,15 +43,17 @@ public class ToyController {
         return "toyDeleteForm";
     }
     @PostMapping("/dodaj")
-    public String dodaj(Toy toy){
+    public String dodaj(Toy toy, Model model){
         toyRep.add(toy);
-        return "redirect:/";
+        model.addAttribute("anList",toyRep.getToyList());
+        return "list";
     }
     @PostMapping("/skasuj")
-    public String skasuj(@RequestParam String name){
+    public String skasuj(@RequestParam String name, Model model){
         Toy findToy = toyRep.findByName(name);
         toyRep.remove(findToy);
-        return "redirect:/";
+        model.addAttribute("anList",toyRep.getToyList());
+        return "list";
     }
     @PostMapping("/filter")
     public String filter(@RequestParam String word, Model model){

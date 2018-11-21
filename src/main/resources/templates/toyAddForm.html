@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Toy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 <form th:action="@{/dodaj}" method="post" th:object="${newToyToAdd}">
-    <input placeholder="Nazwa" th:field="*{name}">
-    <input placeholder="Producent" th:field="*{producer}">
-    <input placeholder="Link URL do obrazka" th:field="*{imgUrl}">
-    <input type="submit" value="Dodaj">
+    <div class="form-group">
+        <label for="toyName">Nazwa</label>
+        <input type="text" class="form-control" id="toyName" placeholder="Wpisz nazwę" th:field="*{name}">
+    </div>
+    <div class="form-group">
+        <label for="toyProducent">Producent</label>
+        <input type="text" class="form-control" id="toyProducent" placeholder="Wpisz producenta" th:field="*{producer}">
+    </div>
+    <div class="form-group">
+        <label for="toyImgUrl">Link do obrazka</label>
+        <input type="text" class="form-control" id="toyImgUrl" placeholder="Podaj link do obrazka" th:field="*{imgUrl}">
+    </div>
+    <button type="submit" class="btn btn-success">Dodaj</button>
 </form>
+
 </body>
 </html>

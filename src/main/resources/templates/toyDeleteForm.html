@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Toy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 <form th:action="@{/skasuj}" method="post" th:object="${newToyToDelete}">
-    <input placeholder="Nazwa" th:field="*{name}">
-    <input type="submit" value="Skasuj">
+    <div class="form-group">
+        <label for="Nazwa">Zabawka na odstrzał</label>
+        <input type="text" class="form-control" id="Nazwa" placeholder="Wpisz nazwę zabawki, którą chcesz skasować" th:field="*{name}">
+    </div>
+    <button type="submit" class="btn btn-danger">Skasuj</button>
 </form>
+
+
 </body>
 </html>
